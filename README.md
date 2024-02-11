@@ -11,4 +11,6 @@ Here you can refer to the modules structured by learning area, that can be used 
 - [Keys Fundamentals](./learning-notes/data-structures/keys-fundamentals.md)
 - [Keys Expirations](./learning-notes/data-structures/keys-expirations.md)
 - [Strings Fundamentals](./learning-notes/data-structures/strings-fundamentals.md)
+- [Hashes Fundamentals](./learning-notes/data-structures/hashes-fundamentals.md)
+- [Lists Fundamentals](./learning-notes/data-structures/lists-fundamentals.md)
 
