@@ -1,4 +1,4 @@
-## API Examples 
+## API Examples
 
 To install dependencies:
 

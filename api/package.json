@@ -2,7 +2,8 @@
   "name": "api",
   "scripts": {
     "dev": "nodemon --exec \"node -r esbuild-register ./src/index.ts\" -e .ts",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --ignore-path .gitignore --write ."
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
