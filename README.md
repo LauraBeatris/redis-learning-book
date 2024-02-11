@@ -10,3 +10,5 @@ Here you can refer to the modules structured by learning area, that can be used 
 ## Data Structures
 - [Keys Fundamentals](./data-structures/keys-fundamentals.md)
 - [Keys Expirations](./data-structures/keys-expirations.md)
+- [Strings Fundamentals](./data-structures/strings-fundamentals.md)
+
