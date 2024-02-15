@@ -29,3 +29,96 @@ redis> SMEMBERS myset
 2) "World"
 redis> 
 ```
+
+## [`SMEMBERS`](https://redis.io/commands/smembers/)
+
+Returns all the members of the set value stored at key.
+
+`SMEMBERS key`
+
+```bash
+redis> SADD myset "Hello"
+(integer) 1
+redis> SADD myset "World"
+(integer) 1
+redis> SMEMBERS myset
+1) "Hello"
+2) "World"
+redis> 
+```
+
+## [`SSCAN`](https://redis.io/commands/sscan/)
+
+Cursor-based mechanism to retrieve set elements.
+
+`SSCAN key cursor [MATCH pattern] [COUNT count]`
+
+## [`SISMEMBER`](https://redis.io/commands/sismember/)
+
+Returns if member is a member of the set stored at key.
+
+`SISMEMBER key member`
+
+```bash
+redis> SADD myset "one"
+(integer) 1
+redis> SISMEMBER myset "one"
+(integer) 1
+redis> SISMEMBER myset "two"
+(integer) 0
+redis>
+```
+
+## [`SREM`](https://redis.io/commands/srem/)
+
+Remove the specified members from the set stored at key.
+
+`SREM key member [member ...]`
+
+```bash
+redis> SADD myset "one"
+(integer) 1
+redis> SADD myset "two"
+(integer) 1
+redis> SADD myset "three"
+(integer) 1
+redis> SREM myset "one"
+(integer) 1
+redis> SREM myset "four"
+(integer) 0
+redis> SMEMBERS myset
+1) "two"
+2) "three"
+redis> 
+```
+
+## [`SPOP`](https://redis.io/commands/spop/)
+
+Removes and returns one or more random members from the set value store at key.
+
+`SPOP key [count]`
+
+```bash
+redis> SADD myset "one"
+(integer) 1
+redis> SADD myset "two"
+(integer) 1
+redis> SADD myset "three"
+(integer) 1
+redis> SPOP myset
+"three"
+redis> SMEMBERS myset
+1) "one"
+2) "two"
+redis> SADD myset "four"
+(integer) 1
+redis> SADD myset "five"
+(integer) 1
+redis> SPOP myset 3
+1) "two"
+2) "four"
+3) "five"
+redis> SMEMBERS myset
+1) "one"
+redis>
+```
