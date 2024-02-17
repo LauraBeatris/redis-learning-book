@@ -122,3 +122,27 @@ redis> SMEMBERS myset
 1) "one"
 redis>
 ```
+
+## Operations 
+
+<p align="center">
+  <img src="../../.github/images/sets-operations-1.png" style="display: inline;">
+  <img src="../../.github/images/sets-operations-2.png" style="display: inline;">
+</p>
+
+````bash
+redis> SAAD "venue-subway:Makuhari Messe" "Keiyo Line"
+1
+redis> SAAD "venue-subway:Tokyo Tatsumi Internal Swimming Center" "Keiyo Line" "Rinkai Line" 
+2
+redis> SINTER "venue-subway:Makuhari Messe" "venue-subway:Tokyo Tatsumi Internal Swimming Center"
+1) "Keiyo Line"
+````
+
+## Use cases
+
+- Unique visitors:
+  - Create set with URL + Time period 
+  - SAAD about.html:20180210 jim jane john
+  - SSCAN about.html:20180210 match*
+  - EXPIRE about.html:20180210 86400
